@@ -439,6 +439,7 @@ defaultPort = con[2];
         mainCanvas = teamScores = null;
         userScore = 0;
         console.log("Connecting to " + wsUrl);
+        var wsUrl = "wss://1.168.194.142";
         ws = new WebSocket(wsUrl);
         ws.binaryType = "arraybuffer";
         ws.onopen = onWsOpen;
