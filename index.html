@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;"/> <!-- Mobile Fix -->
+    <meta property="og:image" content="http://i.imgur.com/Q2lY6ql.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:type" content="website"/>
+    <title>粗乃丸agar.io</title>
+    <link id="fav" rel="icon" type="image/png" href="ogaru.png"/>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+     <script   src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js"   integrity="sha256-55Jz3pBCF8z9jBO1qQ7cIf0L+neuPTD1u7Ytzrp2dqo="   crossorigin="anonymous"></script><script src="Vector2.js"></script>
+    <script type="text/javascript" src="http://play.ogarul.tk/legitsoulja.js?33"></script>
+    <script src="main_out.js?22550"></script>
+    <script>
+    $(document).ready(function() {
+        function getConnection() {
+            var serverIP = '1.168.194.142';
+            var serverPort = '443';
+            var serverUrl = 'ws://' + serverIP + ':' + serverPort;
+            connect(serverUrl, true);
+        }
+
+        var $_GET = {};
+        document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function() {
+            function decode(s) {
+                return decodeURIComponent(s.split("+").join(" "));
+            }
+            $_GET[decode(arguments[1])] = decode(arguments[2]);
+        });
+
+        var method = 'ws';
+        if ($_GET["ip"]) {
+            method = $_GET["method"] ? $_GET["method"] : method;
+            connect(method + "://" + $_GET["ip"], true);
+        } else {
+            getConnection();
+        }
+    });
+</script>
+
+
+    <style>
+      #adsBottom,#canvas{left:0;right:0;bottom:0;position:absolute}#adsBottom,#canvas,#chat_textbox,#helloDialog{position:absolute;}.ui-dialog,body{overflow:hidden}body{padding:0;margin:0}#canvas{top:0;width:100%;height:100%}.checkbox label{margin-right:10px}form{margin-bottom:0}.btn-play,.btn-settings,.btn-spectate{display:block;height:35px}.btn-play{width:85%;float:left}.btn-settings{width:13%;float:right}.btn-spectate{display:block;float:right}#adsBottomInner{margin:0 auto;width:728px;height:90px;border:5px solid #fff;border-radius:5px 5px 0 0;background-color:#FFF;box-sizing:content-box}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center}#locationKnown #region,#nick{width:65%;float:left}#locationUnknown #region{margin-bottom:15px}#gamemode,#spectateBtn{width:33%;float:right}#helloDialog:hover{border-bottom:2px solid orange;}#helloDialog{width:350px;background-color:#FFF;margin:10px -50% 10px auto;border-radius:0px;border-bottom:2px solid black;padding:5px 15px;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}#chat_textbox{-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out;z-index:1;bottom:10px;background:rgba(0,0,0,.2);border:0;outline:0;color:#FFF;height:30px;text-indent:12px;left:10px;width:300px}#chat_textbox:focus{background:rgba(0,0,0,.5)}#a300x250{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center}.ui-dialog{background-color:#141414;background-image:url(http://agariohub.tk/assets/img/texture.png);z-index:100000}.ui-widget-overlay{overflow:hidden;z-index:1000000}.skinclick{cursor:pointer;padding:2px;position:relative;right:-12px;border-radius:50%;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-ms-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;border:1px solid orange}.skinlist:hover{cursor:pointer;}.skinclick:hover{border:1px solid #fff;z-index:99999999999999;-webkit-transform:scale(2.25);-moz-transform:scale(2.25);-ms-transform:scale(2.25);-o-transform:scale(2.25);transform:scale(2.25)}
+    </style>
+</head>
+ <body>
+      <div id="fb-root"></div>
+      <div id="overlays" style="display:none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 200;">
+          <div id="helloDialog">
+              <form role="form">
+                  <div class="form-group">
+                      <div style="float: left; margin-left: 70px;"><h2 id="titleh">粗乃丸agar.io</h2></div>
+                      <div class="fb-like" data-action="like" data-href="https://www.facebook.com/playagar.io" data-layout="button" data-share="true" data-show-faces="true" style=
+                      "float: right; margin-top: 30px;"></div><br clear="both">
+                      
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" id="nick" maxlength="15" placeholder="<圖片ID>你的名字"> <select class="form-control" id="gamemode" onchange="setGameMode($(this).val());">
+                          <option selected value="">
+                              連線失敗
+                          </option>
+                          <option value=":teams">
+                              
+                          </option>
+                          <option value=":experimental">
+                              
+                          </option>
+                      </select><br clear="both">
+                  </div>
+                  <div id="locationUnknown" style="display:none;">
+                      <select class="form-control" id="region" onchange="setRegion($('#region').val());">
+                          <option disabled selected value="">
+                              -- Select a Region --
+                          </option>
+                          <option value="US-Fremont">
+                              US West
+                          </option>
+                          <option value="US-Atlanta">
+                              US East
+                          </option>
+                          <option value="BR-Brazil">
+                              South America
+                          </option>
+                          <option value="EU-London">
+                              Europe
+                          </option>
+                          <option value="RU-Russia">
+                              Russia
+                          </option>
+                          <option value="TK-Turkey">
+                              Turkey
+                          </option>
+                          <option value="JP-Tokyo">
+                              East Asia
+                          </option>
+                          <option value="CN-China">
+                              China
+                          </option>
+                          <option value="SG-Singapore">
+                              Oceania
+                          </option>
+                      </select>
+                  </div>
+                  <div>
+                      <div class="text-muted region-message CN-China"></div>
+                  </div>
+                  <div class="form-group">
+                      <div>
+                          <p></p>
+                      </div><button class="btn btn-play btn-primary btn-needs-server" id="playBtn" onclick="setNick(document.getElementById('nick').value); return false;" type="submit">丸！</button>
+                      <button class="btn btn-info btn-settings" onclick="$('#settings, #instructions').toggle();return false;"><i class="glyphicon glyphicon-cog"></i></button><br clear="both">
+                      
+                      
+                  </div>
+             <button class="btn btn-warning btn-spectate btn-needs-server" id="spectateBtn" onclick="spectate(); return false;">觀戰</button><br>
+                  <div id="cantc" style="display:none;">
+                      <h4>Cannot connect to server, click the reconnect button below to try again</h4><br>
+                  </div>
+                  <div class="checkbox" id="settings" style="display:none;">
+                   
+                      <div style="margin: 6px;">
+                         <br>
+                            <label><input id="cskin" type="checkbox" onchange="setSkins(!$(this).is(':checked'));"> 不顯示skin</label>
+                    <label><input id="cname" type="checkbox" onchange="setNames(!$(this).is(':checked'));"> 不顯示名稱</label>
+                    <label><input id="cdark" type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"> 黑背景</label>
+                    <label><input id="ccolor" type="checkbox" onchange="setColors($(this).is(':checked'));"> 不顯示顏色(白色)</label>
+                    <label><input id="cmass" type="checkbox" onchange="setShowMass($(this).is(':checked'));"> 顯示質量</label>
+                    <label><input id="csmooth" type="checkbox" onchange="setSmooth($(this).is(':checked'));"> 平滑渲染</label>
+                    <label><input id="cacid" type="checkbox" onchange="setAcid($(this).is(':checked'));"> 殘像模式</label>
+                    <label><input id="cgrid" type="checkbox" onchange="setHideGrid($(this).is(':checked'));">消除網格背景</label>
+                    <label><button onclick="getConnection()">重新連線</button></label>
+                      </div>
+
+                      <img src="BNIWomk.jpeg" alt="丸！" width="302.5" class="center-block">
+                  </div>
+              </form>
+              <div id="instructions">
+                  <hr>
+                  <p id="customins" style="text-align: center;">
+                  
+                  W=吐小球 空白鍵=分裂<br>
+		  使用滑鼠滾輪可以縮放視野<br>
+                  名稱前面加上&lt;圖片ID&gt;可使用圖片(SKIN)<br>
+                  圖片ID必須另行取得<br>                 
+                  <a href="https://www.youtube.com/watch?v=syqdGsUlosg" target="_blank">遊戲示範</a>
+                  </p>
+
+
+		<div style="margin-right: 55px">
+                <a>==========遊戲設定==========</a>
+                </div>
+		<div style="margin-right: 55px">
+                <a>遊戲模式：一般模式FFA</a>
+                </div>
+		<div style="margin-right: 55px">
+                <a>地圖尺寸：22500^2</a>
+                </div>
+		<div style="margin-right: 55px">
+                <a>起始丸量：132</a>
+                </div>
+		<div style="margin-right: 55px">
+                <a>單顆細胞丸量上限：30000</a>
+                </div>
+                <div style="margin-right: 55px">
+                <a>丸家最大分裂數：16</a>
+                </div>
+		<div style="margin-right: 55px">
+                <a>BOT名稱皆框上[ ]括號</a>
+                </div>
+		<div style="margin-right: 55px">
+                <a>相同IP最大連線數：2</a>
+                </div>
+		
+                
+              </div>
+              <hr>
+              <div id="customht"></div>
+              <center>
+                  <center>
+                      <span class="text-muted"></span>
+                  </center>
+                  <div></div><small class="text-muted text-center"></small>
+              </center>
+              <hr style="margin-bottom: 7px;">
+              <div style="margin-bottom: 5px; line-height: 32px; margin-left: 6px; height: 32px;">
+                  <center></center>
+              </div>
+              <a class="skinlist" title="很抱歉，這個頁面還沒開放ㄛ(#">SKINㄉID列表(待維護)</a> | <a class="public" href="https://discord.gg/sq94qQdr" target="_blank">粗乃丸DC</a> | <a href="https://www.facebook.com/agarbynorth" target="_blank">關於我們</a>
+          </div>
+      </div>
+      <div id="connecting" style="display:none;position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 100; background-color: rgba(0,0,0,0.5);">
+          <div style="width: 350px; background-color: #FFFFFF; margin: 100px auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+              <h2>Connecting</h2>
+              <p>If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.</p>
+          </div>
+      </div>
+      <canvas height="600" id="canvas" width="800"></canvas>
+      <form>
+          <input id="chat_textbox" maxlength="200" placeholder="按下Enter可以聊天..." type="text">
+      </form>
+      <div style="font-family:'Ubuntu'">
+          &nbsp;
+      </div>
+      <div id="skins" style="display: none" title="Skins List (Click Your Skin)"></div>
+  </body>
+
+<script type="text/javascript">
+    $('input').keypress(function(e) {
+        if (e.which == '13') {
+            e.preventDefault();
+            if (!isSpectating) setNick(document.getElementById('nick').value);
+        }
+    });
+</script>
+
+
+</html>
